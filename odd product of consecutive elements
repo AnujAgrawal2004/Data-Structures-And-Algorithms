@@ -1,0 +1,35 @@
+/*
+Q8. Write a short Java function that takes an array of int values as an argument and 
+determines if there is a pair of numbers in the array whose product is odd.
+*/
+package com.company;
+import java.util.Scanner;
+public class checkPair {
+    public static boolean check(int arr[],int n)
+    {
+        for(int i=0;i<n-1;i++)
+        {
+            if((arr[i]*arr[i+1])%2!=0)
+                return true;
+        }
+        return false;
+    }
+}
+class Driver6
+{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the size");
+        int n=s.nextInt();
+        int arr[]=new int[n];
+        System.out.println("Enter the array");
+        for (int i = 0; i < n; i++) {
+            arr[i]=s.nextInt();
+        }
+        if(checkPair.check(arr,n))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
+    }
+}
