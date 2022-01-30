@@ -1,0 +1,47 @@
+/*
+Question:
+Q20. Given an input string S and two characters char1 and char2, you need to replace every occurrence of character c1
+with character c2 in the given string. Do this recursively.
+Sample Input :
+abaca
+a x
+Sample Output :
+xbxcd
+Remove Duplicates Recursively
+*/
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Replace {
+        public static String replace(String str,char c1,char c2,int idx)
+        {
+            if(idx== str.length())
+                return "";
+            String s=replace(str,c1,c2,idx+1);
+            if(str.charAt(idx)==c1)
+            {
+                s=c2+s;
+            }
+            else
+            {
+                s=str.charAt(idx)+s;
+            }
+            return s;
+        }
+}
+class Driver23
+{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the string");
+        String str=s.next();
+        System.out.println("Enter the character to be replaced");
+        char c1=s.next().charAt(0);
+        System.out.println("Enter the character by which c1 to be replaced");
+        char c2=s.next().charAt(0);
+        System.out.println(Replace.replace(str,c1,c2,0));
+
+    }
+}
