@@ -1,0 +1,43 @@
+//Q.Write a program in java to sort an string according to the length anf if two strings having same length then place them  in lexigraphical order .
+package com.company;
+
+public class Divide {
+    public static int lexi(String s1,String s2)
+    {
+        int res=s1.compareToIgnoreCase(s2);
+        return res;
+    }
+    public static void main(String[] args)
+    {
+        String str="A Quick Brown Fox jumps over the lazy little dog";
+        String[] str2=str.split(" ");
+        int n= str2.length;
+
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=0;j<(n-(i+1));j++)
+            {
+                if(str2[j].length()>str2[j+1].length())
+                {
+                    String temp=str2[j];
+                    str2[j]=str2[j+1];
+                    str2[j+1]=temp;
+                }
+                if(str2[j].length()==str2[j+1].length())
+                {
+                    int k=lexi(str2[j],str2[j+1]);
+                    if(k>1)
+                    {
+                        String temp2=str2[j];
+                        str2[j]=str2[j+1];
+                        str2[j+1]=temp2;
+                    }
+                }
+            }
+        }
+        System.out.println("The string array is");
+        for (int i = 0; i < str2.length; i++) {
+            System.out.print(str2[i]+" ");
+        }
+    }
+}
