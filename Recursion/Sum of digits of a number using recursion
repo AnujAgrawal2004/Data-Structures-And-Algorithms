@@ -1,0 +1,16 @@
+package com.company;
+
+public class SumofDigits {
+
+    public int sum(int num)
+    {
+        if(num==0)
+            return 0;
+        return (num%10)+sum(num/10);
+    }
+
+    public static void main(String[] args) {
+        SumofDigits s=new SumofDigits();
+        System.out.println(s.sum(1089));
+    }
+}
